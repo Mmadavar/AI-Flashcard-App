@@ -13,6 +13,40 @@ flashcardlist = [
   }
 ]
 
+// function for export flashcards/options in CSV or anki(.apkg) format
+function exportFlashcards() {
+  return (
+    <>
+      <div>
+        <button onClick={exportCSV}>Export to CSV format</button>
+      </div>
+      <div> 
+        <button onClick={exportAnki}>Export to Anki (.apkg) format</button>
+      </div>
+    </>
+
+  )
+}
+
+// export to .apkg format
+function exportAnki() {
+  return (
+    <></>
+
+    )
+
+}
+
+// export to .csv format
+function exportCSV() {
+  return (
+    <></>
+  )
+}
+
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 
