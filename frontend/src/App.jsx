@@ -90,17 +90,25 @@ function showFlashCards() {
   )
 }
 
-function shareWithClassmates() {
+function ShareWithClassmates() {
+  const [email, setEmail] = useState("")
+
+  function handleEmailSubmit(e) {
+    e.preventDefault()
+    console.log("Email submitted: ", email);
+    // logic to share flashcards with the email provided
+
+  }
+
   return (
-    <>
       <div>
         <p>Type in your classmates email to share with them</p>
-        <label for="email">Enter your email</label>
-        <input type="email" id="email" name="email"></input>
-        <input type="submit"></input>
+        <form onSubmit={handleEmailSubmit}>
+          <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <button type="submit">Share here</button>
+        </form>
       </div>
-    </>
-  )
+  );
 }
 
 export default App
